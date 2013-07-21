@@ -1,0 +1,100 @@
+Python for Data Science
+Axial HQ
+23 Jul 2013
+
+Aditya Mukerjee
+
+http://www.adityamukerjee.net
+@chimeracoder
+
+
+* Personal Background
+
+* The dreaded question: python2 or python3?
+
+- 6-12 months ago: Definitely python2
+- 6-12 months from now: probably python3
+- Right now - tossup (try python3)
+- Most major libraries have now been ported
+
+* Python is great for data science!
+
+- High-level language 
+- Munging made easy
+- Full-featured standard library
+- Highly comprehensive third-party libs for data science
+
+
+* Python can be problematic for data science
+
+- The GIL poses, at best, an extra hoop to jump through
+- Slow (compared to C/C++/Java)
+- Academics often prefer R (stats) MATLAB (science) or STATA (quant. social sciences)
+
+
+* Why not pure python?
+
+- Slow
+- Non-standard language for some academics
+- Most third-party libs aim to solve one or both of these problems
+
+
+
+
+* Iterating with Itertools
+
+
+* Itertools: Iteration
+
+- Wh
+
+
+* Bridging the Gap
+
+
+* NumPy/SciPy
+
+
+
+* RPy
+
+- Interface with R without leaving the comfort of Python
+
+* Pandas
+
+- S
+
+
+* High-level: Scraping and processing
+
+* Scraping: beautifulsoup/lxml
+
+- beautifulsoup and lxml are both tools for "parsing" XML/HTML
+- beautifulsoup is not a true parser $USED_BY_REDDIT$
+- lxml wraps both libxml and libxslt
+- lxml/lxml2 is usually faster
+- beautifulsoup has better support for encoding detection
+- lxml provides an interface to beautifulsoup, so you can switch between the two
+- lxml can use beautifulsoup as a fallback $INSERT_IMAGE_HERE$
+
+
+* Processing: NLP (Natural Language Processing)
+
+* NLTK
+
+- NLTK is the go-to library for natural-language processing work
+- Very full-featured
+- Very easy to use
+- Be careful of runtime complexity
+
+
+* Futher Resources
+
+- Foo
+- Bar
+
+
+
+
+
+
