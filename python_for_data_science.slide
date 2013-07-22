@@ -10,15 +10,21 @@ http://www.adityamukerjee.net
 
 * Personal Background
 
-* The dreaded question: python2 or python3?
+- Studied computer science and statistics at Columbia
+- Worked on the server team at foursquare (Explore recommendation engine)
+- Previously on the OkCupid data team (researched OkTrends reports)
+- Most recently, Hacker-in-Residence at Quotidian Ventures
+- hackNY fellow 2011
 
+
+
+* The big question: python2 or python3?
 - 6-12 months ago: Definitely python2
-- 6-12 months from now: probably python3
+- 6 months from now: probably python3
 - Right now - tossup (try python3)
 - Most major libraries have now been ported
 
 * Python is great for data science!
-
 - High-level language 
 - Munging made easy
 - Full-featured standard library
@@ -26,49 +32,67 @@ http://www.adityamukerjee.net
 
 
 * Python can be problematic for data science
-
 - The GIL poses, at best, an extra hoop to jump through
 - Slow (compared to C/C++/Java)
-- Academics often prefer R (stats) MATLAB (science) or STATA (quant. social sciences)
+- Academics often prefer R (stats), MATLAB (science), or STATA (quant. social sciences)
 
 
 * Why not pure python?
-
 - Slow
 - Non-standard language for some academics
 - Most third-party libs aim to solve one or both of these problems
 
 
 
+* Tools from the Python Standard Library
 
 * Iterating with Itertools
-
-
-* Itertools: Iteration
-
 - Wh
+
+* Array
+- Just kidding - *never* use this!
 
 
 * Bridging the Gap
 
 
-* NumPy/SciPy
+* SciPy (e.g. NumPy)
+- A set of free software packages for scientific computation tasks
+- If you need it, it's in SciPy!
+- *NumPy* provides support for arrays and matrices of arbitrary dimensions
+- *SciPy* provides the basics of scientific computation
+- *Matplotlib* provides MATLAB-esque graphing and plotting
+- *Pandas* provides manipulation of data structures
+- Also available: symbolic mathematics (*SymPy*), interactive console (*IPython*), image processing (*scikit-image*), and more
 
+
+* NumPy
+- Basic arrays and matrices in arbitrary dimensions
+- Do *not* use the built-in Python _array_ type from the standard library
+- NumPy arrays are implemented in C, and laid out in memory in C-idiomatic form
+- Very interoperable with native Python functions
+- Can usually be passed in where a Python list is expected, etc.
+
+** NumPy Caveats
+- No free lunch - you're in C-land now!
+- $INSERT_EXAMPLE_CAVEATS_HERE$
+- $INSERT_FOGLIA_SLIDE_HERE$
 
 
 * RPy
-
 - Interface with R without leaving the comfort of Python
+- Many statistical libraries are implemented first in R, the language of choice for most academic statisticians
+- R also allows a flexible interface for manipulating data as 'data frames', which can be convenient
+- $INSERT_EXAMPLES$
 
 * Pandas
-
-- S
+- Mitigates some of the need for RPy (allows a similar interface for manipulating data)
+- $INSERT_EXAMPLES$
 
 
 * High-level: Scraping and processing
 
 * Scraping: beautifulsoup/lxml
-
 - beautifulsoup and lxml are both tools for "parsing" XML/HTML
 - beautifulsoup is not a true parser $USED_BY_REDDIT$
 - lxml wraps both libxml and libxslt
@@ -78,11 +102,8 @@ http://www.adityamukerjee.net
 - lxml can use beautifulsoup as a fallback $INSERT_IMAGE_HERE$
 
 
-* Processing: NLP (Natural Language Processing)
-
-* NLTK
-
-- NLTK is the go-to library for natural-language processing work
+* Processing: NLTK
+- NLTK is the go-to library for NLP (natural-language processing) work
 - Very full-featured
 - Very easy to use
 - Be careful of runtime complexity
