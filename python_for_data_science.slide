@@ -12,17 +12,22 @@ http://www.adityamukerjee.net
 
 - Studied computer science and statistics at Columbia
 - Worked on the server team at foursquare (Explore recommendation engine)
-- Previously on the OkCupid data team (researched OkTrends reports)
+- Previously on the OkCupid data team (conducted research for OkTrends reports)
 - Most recently, Hacker-in-Residence at Quotidian Ventures
 - hackNY fellow 2011
 
 
+* Some common data science tools
 
-* The big question: python2 or python3?
-- 6-12 months ago: Definitely python2
-- 6 months from now: probably python3
-- Right now - tossup (try python3)
-- Most major libraries have now been ported
+- Python
+- R
+- MATLAB
+- Stata
+- SAS
+- Julia
+- Go 
+
+Chances are, you'll end up having to use more than one of these
 
 * Python is great for data science!
 - High-level language 
@@ -36,18 +41,31 @@ http://www.adityamukerjee.net
 - Slow (compared to C/C++/Java)
 - Academics often prefer R (stats), MATLAB (science), or STATA (quant. social sciences)
 
+Some problems can be avoided by avoiding pure python
+
 
 * Why not pure python?
 - Slow
 - Non-standard language for some academics
 - Most third-party libs aim to solve one or both of these problems
 
+(PyPy may also help in the future, but its use in data science is currently experimental)
+ 
+* The big question: python2 or python3?
+
+Scientists (particularly academics) tend to be the slowest to change any technology
+
+- 6-12 months ago: Definitely python2
+- 6 months from now: probably python3
+- Right now - tossup (try python3)
+- Most major libraries have now been ported
 
 
 * Tools from the Python Standard Library
 
 * Iterating with Itertools
-- Wh
+- Provides a number of utilities (not just useful for data science)
+- Faster than using custom Python code, but still slow
 
 * Array
 - Just kidding - *never* use this!
@@ -63,56 +81,136 @@ http://www.adityamukerjee.net
 - *SciPy* provides the basics of scientific computation
 - *Matplotlib* provides MATLAB-esque graphing and plotting
 - *Pandas* provides manipulation of data structures
+- *scikit-learn* provides machine learning in python
 - Also available: symbolic mathematics (*SymPy*), interactive console (*IPython*), image processing (*scikit-image*), and more
+
+
+* IPython
+- Optional for Python work; all but essential for data science
+- IPython Notebook, in their own words:
+  "The IPython Notebook is a web-based interactive computational environment where you can 
+  combine code execution, text, mathematics, plots and rich media into a single document"
+- Allows easy profiling, debugging, sharing, and more
 
 
 * NumPy
 - Basic arrays and matrices in arbitrary dimensions
-- Do *not* use the built-in Python _array_ type from the standard library
+- Enough goodies here for a talk on their own
 - NumPy arrays are implemented in C, and laid out in memory in C-idiomatic form
 - Very interoperable with native Python functions
 - Can usually be passed in where a Python list is expected, etc.
 
-** NumPy Caveats
-- No free lunch - you're in C-land now!
-- $INSERT_EXAMPLE_CAVEATS_HERE$
-- $INSERT_FOGLIA_SLIDE_HERE$
+* Working with arrays
+.image 2013-07-22-195143_302x395_scrot.png
 
+.link http://wiki.scipy.org/NumPy_for_Matlab_Users If you're used to MATLAB, do _not_ use matrices (http://wiki.scipy.org/NumPy_for_Matlab_Users)
+
+* Why use np.array
+
+* NumPy gives you speed
+.image 2013-07-23-125504_517x181_scrot.png
+.image 2013-07-23-125635_516x231_scrot.png
+
+
+* NumPy gives you flexibility: eg. indexing
+.image 2013-07-23-130955_332x86_scrot.png
+.image 2013-07-23-131205_272x147_scrot.png
+
+* NumPy gives you flexibility: eg. reshaping
+
+.image 2013-07-23-132257_350x127_scrot.png
+The above is _instantaneous_!
+
+.image 2013-07-23-150147_328x211_scrot.png
+
+* NumPy Flags
+.image 2013-07-23-150404_242x324_scrot.png
+
+* Don't Fear the C
+- Thinking (just a bit!) about memory will save much time & headache
+
+* Python memory layout
+.image 2013-07-22-204138_605x359_scrot.png
+
+* NumPy memory layout
+.image 2013-07-22-204314_582x403_scrot.png
+
+
+* NumPy Caveats
+
+* Always use binary installation if possible
+- If compiling from scratch, use GNU tools or stock up on Tylenol
+- This applies to the entire SciPy toolchain
+
+* No free lunch - you're in C-land now!
+.image 2013-07-22-200634_327x176_scrot.png
+Kiss goodbye to that!
+
+.image 2013-07-23-124936_559x164_scrot.png
+
+* NumPy costs you memory
+.image 2013-07-23-130619_567x111_scrot.png
+- The above operation will create _three_ temporary values
+
+* Pandas
+- Mitigates some of the need for RPy (allows a similar interface for manipulating data)
+.image 2013-07-23-171306_653x224_scrot.png
+
+Pandas' data frames are very similar to R's data frames
 
 * RPy
 - Interface with R without leaving the comfort of Python
 - Many statistical libraries are implemented first in R, the language of choice for most academic statisticians
 - R also allows a flexible interface for manipulating data as 'data frames', which can be convenient
-- $INSERT_EXAMPLES$
-
-* Pandas
-- Mitigates some of the need for RPy (allows a similar interface for manipulating data)
-- $INSERT_EXAMPLES$
+.image 2013-07-23-145725_803x80_scrot.png
 
 
-* High-level: Scraping and processing
+* High-level: Scraping, processing, and analysis
 
 * Scraping: beautifulsoup/lxml
 - beautifulsoup and lxml are both tools for "parsing" XML/HTML
-- beautifulsoup is not a true parser $USED_BY_REDDIT$
-- lxml wraps both libxml and libxslt
-- lxml/lxml2 is usually faster
+- beautifulsoup is not a true parser 
+- lxml wraps both libxml and libxslt and is usually faster
 - beautifulsoup has better support for encoding detection
 - lxml provides an interface to beautifulsoup, so you can switch between the two
-- lxml can use beautifulsoup as a fallback $INSERT_IMAGE_HERE$
+- lxml can use beautifulsoup as a fallback 
+.image 2013-07-23-154719_258x311_scrot.png
 
 
 * Processing: NLTK
 - NLTK is the go-to library for NLP (natural-language processing) work
 - Very full-featured
+- Provides sample corpora, tokenizing, parse trees, as well as advanced functionality
 - Very easy to use
 - Be careful of runtime complexity
 
 
+
+* MapReduce
+- Could spend an entire talk about the MapReduce paradigm
+- Python is a _very_ convenient language for using with Hadoop
+- Amazon EMR (Elastic MapReduce) even uses Python for their demo
+
+* Analysis: SciKit-learn
+- Provides fundamental machine learning utilities
+- Supervised/unsupervised learning, model selection and evaluation, etc.
+- Can also do some preprocessing, though not the focus of scikit-learn
+
+
+* Graphing: Matplotlib
+- Not the only (or necessarily best) graphing library for Python
+- Compatible with the rest of SciPy, great for 'polished WIP'
+- Highly customizable
+
+* Matplotlib example
+
+.image 2013-07-23-143450_655x329_scrot.png
+.image 2013-07-23-143604_317x281_scrot.png
+
 * Futher Resources
 
-- Foo
-- Bar
+.link http://www.stephendiehl.com/posts/postmodern.html Navigating the Postmodern Python World
+.link http://shop.oreilly.com/product/0636920023784.do Python for Data Analysis (O'Reilly)
 
 
 
