@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python for Data Science</title>
+    <meta charset='utf-8'>
+    <script src='static/slides.js'></script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+      
+      <article>
+        <h1>Python for Data Science</h1>
+        <h3>Axial HQ</h3>
+        <h3>23 July 2013</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Aditya Mukerjee
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            
+          </div>
+        
+      </article>
+      
+  
+  
+      <article>
+      
+        <h3></h3>
+        
+<div class="image">
+  <img src="88x31.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Personal Background</h3>
+        
+  <ul>
+  
+    <li>Studied computer science and statistics at Columbia</li>
+  
+    <li>Worked on the server team at foursquare (Explore recommendation engine)</li>
+  
+    <li>Previously on the OkCupid data team (conducted research for OkTrends reports)</li>
+  
+    <li>Most recently, Hacker-in-Residence at Quotidian Ventures</li>
+  
+    <li>hackNY fellow 2011</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Some common data science tools</h3>
+        
+  <ul>
+  
+    <li>Python</li>
+  
+    <li>R</li>
+  
+    <li>MATLAB</li>
+  
+    <li>Stata</li>
+  
+    <li>SAS</li>
+  
+    <li>Julia</li>
+  
+    <li>Go </li>
+  
+  </ul>
+
+  
+  <p>
+    Chances are, you&#39;ll end up having to use more than one of these
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Python is great for data science!</h3>
+        
+  <ul>
+  
+    <li>High-level language </li>
+  
+    <li>Munging made easy</li>
+  
+    <li>Full-featured standard library</li>
+  
+    <li>Highly comprehensive third-party libs for data science</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Python can be problematic for data science</h3>
+        
+  <ul>
+  
+    <li>The GIL poses, at best, an extra hoop to jump through</li>
+  
+    <li>Slow (compared to C/C++/Java)</li>
+  
+    <li>Academics often prefer R (stats), MATLAB (science), or STATA (quant. social sciences)</li>
+  
+  </ul>
+
+  
+  <p>
+    Some problems can be avoided by avoiding pure python
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Why not pure python?</h3>
+        
+  <ul>
+  
+    <li>Slow</li>
+  
+    <li>Non-standard language for some academics</li>
+  
+    <li>Most third-party libs aim to solve one or both of these problems</li>
+  
+  </ul>
+
+  
+  <p>
+    (PyPy may also help in the future, but its use in data science is currently experimental)
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>The big question: python2 or python3?</h3>
+        
+  
+  <p>
+    Scientists (particularly academics) tend to be the slowest to change any technology
+  </p>
+  
+
+  <ul>
+  
+    <li>6-12 months ago: Definitely python2</li>
+  
+    <li>6 months from now: probably python3</li>
+  
+    <li>Right now - tossup (try python3)</li>
+  
+    <li>Most major libraries have now been ported</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h2>Tools from the Python Standard Library</h2>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Iterating with Itertools</h3>
+        
+  <ul>
+  
+    <li>Provides a number of utilities (not just useful for data science)</li>
+  
+    <li>Faster than using custom Python code, but still slow</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Array</h3>
+        
+  <ul>
+  
+    <li>Just kidding - <b>never</b> use this!</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h2>Bridging the Gap</h2>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>SciPy (e.g. NumPy)</h3>
+        
+  <ul>
+  
+    <li>A set of free software packages for scientific computation tasks</li>
+  
+    <li>If you need it, it&#39;s in SciPy!</li>
+  
+    <li><b>NumPy</b> provides support for arrays and matrices of arbitrary dimensions</li>
+  
+    <li><b>SciPy</b> provides the basics of scientific computation</li>
+  
+    <li><b>Matplotlib</b> provides MATLAB-esque graphing and plotting</li>
+  
+    <li><b>Pandas</b> provides manipulation of data structures</li>
+  
+    <li><b>scikit-learn</b> provides machine learning in python</li>
+  
+    <li>Also available: symbolic mathematics (<b>SymPy</b>), interactive console (<b>IPython</b>), image processing (<b>scikit-image</b>), and more</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>IPython</h3>
+        
+  <ul>
+  
+    <li>Optional for Python work; all but essential for data science</li>
+  
+    <li>IPython Notebook, in their own words:</li>
+  
+  </ul>
+
+  
+  <div class="code"><pre>&#34;The IPython Notebook is a web-based interactive computational environment where you can 
+combine code execution, text, mathematics, plots and rich media into a single document&#34;</pre></div>
+  
+
+  <ul>
+  
+    <li>Allows easy profiling, debugging, sharing, and more</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy</h3>
+        
+  <ul>
+  
+    <li>Basic arrays and matrices in arbitrary dimensions</li>
+  
+    <li>Enough goodies here for a talk on their own</li>
+  
+    <li>NumPy arrays are implemented in C, and laid out in memory in C-idiomatic form</li>
+  
+    <li>Very interoperable with native Python functions</li>
+  
+    <li>Can usually be passed in where a Python list is expected, etc.</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Working with arrays</h3>
+        
+<div class="image">
+  <img src="2013-07-22-195143_302x395_scrot.png">
+</div>
+<p class="link"><a href="http://wiki.scipy.org/NumPy_for_Matlab_Users" target="_blank">If you&#39;re used to MATLAB, do <i>not</i> use matrices (http://wiki.scipy.org/NumPy_for_Matlab_Users)</a></p>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h2>Why use np.array</h2>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy gives you speed</h3>
+        
+<div class="image">
+  <img src="2013-07-23-125504_517x181_scrot.png">
+</div>
+
+<div class="image">
+  <img src="2013-07-23-125635_516x231_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy gives you flexibility: eg. indexing</h3>
+        
+<div class="image">
+  <img src="2013-07-23-130955_332x86_scrot.png">
+</div>
+
+<div class="image">
+  <img src="2013-07-23-131205_272x147_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy gives you flexibility: eg. reshaping</h3>
+        
+<div class="image">
+  <img src="2013-07-23-132257_350x127_scrot.png">
+</div>
+
+  
+  <p>
+    The above is <i>instantaneous</i>!
+  </p>
+  
+
+<div class="image">
+  <img src="2013-07-23-150147_328x211_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy Flags</h3>
+        
+<div class="image">
+  <img src="2013-07-23-150404_242x324_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Don&#39;t Fear the C</h3>
+        
+  <ul>
+  
+    <li>Thinking (just a bit!) about memory will save much time &amp; headache</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Python memory layout</h3>
+        
+<div class="image">
+  <img src="2013-07-22-204138_605x359_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy memory layout</h3>
+        
+<div class="image">
+  <img src="2013-07-22-204314_582x403_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h2>NumPy Caveats</h2>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Always use binary installation if possible</h3>
+        
+  <ul>
+  
+    <li>If compiling from scratch, use GNU tools or stock up on Tylenol</li>
+  
+    <li>This applies to the entire SciPy toolchain</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>No free lunch - you&#39;re in C-land now!</h3>
+        
+<div class="image">
+  <img src="2013-07-22-200634_327x176_scrot.png">
+</div>
+
+  
+  <p>
+    Kiss goodbye to that!
+  </p>
+  
+
+<div class="image">
+  <img src="2013-07-23-124936_559x164_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>NumPy costs you memory</h3>
+        
+<div class="image">
+  <img src="2013-07-23-130619_567x111_scrot.png">
+</div>
+
+  <ul>
+  
+    <li>The above operation will create <i>three</i> temporary values</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Pandas</h3>
+        
+  <ul>
+  
+    <li>Mitigates some of the need for RPy (allows a similar interface for manipulating data)</li>
+  
+  </ul>
+
+<div class="image">
+  <img src="2013-07-23-171306_653x224_scrot.png">
+</div>
+
+  
+  <p>
+    Pandas&#39; data frames are very similar to R&#39;s data frames
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>RPy</h3>
+        
+  <ul>
+  
+    <li>Interface with R without leaving the comfort of Python</li>
+  
+    <li>Many statistical libraries are implemented first in R, the language of choice for most academic statisticians</li>
+  
+    <li>R also allows a flexible interface for manipulating data as &#39;data frames&#39;, which can be convenient</li>
+  
+  </ul>
+
+<div class="image">
+  <img src="2013-07-23-145725_803x80_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h2>High-level: Scraping, processing, and analysis</h2>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Scraping: beautifulsoup/lxml</h3>
+        
+  <ul>
+  
+    <li>beautifulsoup and lxml are both tools for &#34;parsing&#34; XML/HTML</li>
+  
+    <li>beautifulsoup is not a true parser </li>
+  
+    <li>lxml wraps both libxml and libxslt and is usually faster</li>
+  
+    <li>beautifulsoup has better support for encoding detection</li>
+  
+    <li>lxml provides an interface to beautifulsoup, so you can switch between the two</li>
+  
+    <li>lxml can use beautifulsoup as a fallback </li>
+  
+  </ul>
+
+<div class="image">
+  <img src="2013-07-23-154719_258x311_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Processing: NLTK</h3>
+        
+  <ul>
+  
+    <li>NLTK is the go-to library for NLP (natural-language processing) work</li>
+  
+    <li>Very full-featured</li>
+  
+    <li>Provides sample corpora, tokenizing, parse trees, as well as advanced functionality</li>
+  
+    <li>Very easy to use</li>
+  
+    <li>Be careful of runtime complexity</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>MapReduce</h3>
+        
+  <ul>
+  
+    <li>Could spend an entire talk about the MapReduce paradigm</li>
+  
+    <li>Python is a <i>very</i> convenient language for using with Hadoop</li>
+  
+    <li>Amazon EMR (Elastic MapReduce) even uses Python for their demo</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Analysis: SciKit-learn</h3>
+        
+  <ul>
+  
+    <li>Provides fundamental machine learning utilities</li>
+  
+    <li>Supervised/unsupervised learning, model selection and evaluation, etc.</li>
+  
+    <li>Can also do some preprocessing, though not the focus of scikit-learn</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Graphing: Matplotlib</h3>
+        
+  <ul>
+  
+    <li>Not the only (or necessarily best) graphing library for Python</li>
+  
+    <li>Compatible with the rest of SciPy, great for &#39;polished WIP&#39;</li>
+  
+    <li>Highly customizable</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Matplotlib example</h3>
+        
+<div class="image">
+  <img src="2013-07-23-143450_655x329_scrot.png">
+</div>
+
+<div class="image">
+  <img src="2013-07-23-143604_317x281_scrot.png">
+</div>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Futher Resources</h3>
+        <p class="link"><a href="http://www.stephendiehl.com/posts/postmodern.html" target="_blank">Navigating the Postmodern Python World</a></p><p class="link"><a href="http://shop.oreilly.com/product/0636920023784.do" target="_blank">Python for Data Analysis (O&#39;Reilly)</a></p>
+      
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h1>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Aditya Mukerjee
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            <p class="link"><a href="http://www.adityamukerjee.net" target="_blank">http://www.adityamukerjee.net</a></p><p class="link"><a href="http://twitter.com/chimeracoder" target="_blank">@chimeracoder</a></p>
+          </div>
+        
+      </article>
+
+  </body>
+  
+</html>
