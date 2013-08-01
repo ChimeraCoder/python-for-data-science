@@ -1,0 +1,15 @@
+Python for Data Science
+===================
+
+
+This presentation was given on 23 July 2013 at Axial HQ
+
+Fully rendered slides are available on the [project page](http://chimeracoder.github.io/python-for-data-science)
+
+
+More detailed instructions for generating these slides manually is available at the [package documentation](http://godoc.org/code.google.com/p/go.talks/present)
+
+License
+-----------
+
+All slides provided under the [CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US) license.
