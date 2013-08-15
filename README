@@ -2,9 +2,11 @@ Python for Data Science
 ===================
 
 
-This presentation was given on 23 July 2013 at Axial HQ
+This presentation was given on 23 July 2013 at Axial HQ. 
 
-Fully rendered slides are available on the [project page](http://chimeracoder.github.io/python-for-data-science)
+Fully rendered slides are available on the [project page](http://chimeracoder.github.io/python-for-data-science).
+
+Audo is available at http://axialcorps.com/2013/08/08/numpy-is-core-lessons-from-python-for-data-science/
 
 
 More detailed instructions for generating these slides manually is available at the [package documentation](http://godoc.org/code.google.com/p/go.talks/present)
